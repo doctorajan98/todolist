@@ -4,6 +4,8 @@ package org.doctorajan;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     static void main() {
+
+        Main main = new Main();
         int number = 20;
 
         if (number > 10) {
@@ -43,5 +45,13 @@ public class Main {
             System.out.println("Do number is " + number);
             number--;
         } while (number > 0);
+
+        number = 10;
+        int newNumber = main.add(number, 20);
+        System.out.println("New number is " + newNumber);
+    }
+
+    public int add(int a, int b) {
+        return a + b;
     }
 }
