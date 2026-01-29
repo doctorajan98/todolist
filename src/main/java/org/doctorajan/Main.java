@@ -1,7 +1,5 @@
 package org.doctorajan;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     static void main() {
 
@@ -49,9 +47,17 @@ public class Main {
         number = 10;
         int newNumber = main.add(number, 20);
         System.out.println("New number is " + newNumber);
+
+        BankAccount bankAccount = new BankAccount();
+        bankAccount.deposit(100.0);
+        bankAccount.getBalance();
+        bankAccount.withdraw(50.0);
+        bankAccount.getBalance();
     }
 
     public int add(int a, int b) {
         return a + b;
     }
+
+
 }
