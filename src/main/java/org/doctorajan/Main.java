@@ -1,5 +1,6 @@
 package org.doctorajan;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -26,16 +27,28 @@ public class Main {
                     System.out.println("Exiting...");
                     break;
                 case "remove":
-                    System.out.println("Enter the number of the task to remove: ");
-                    int removeTaskNumber = scanner.nextInt();
-                    scanner.nextLine();
-                    todoList.removeTask(removeTaskNumber);
+                    try {
+                        System.out.println("Enter the number of the task to remove: ");
+                        int removeTaskNumber = scanner.nextInt();
+                        scanner.nextLine();
+                        todoList.removeTask(removeTaskNumber);
+                    }
+                    catch (InputMismatchException e) {
+                        System.out.println("Invalid input. Please enter a number.");
+                        scanner.nextLine();
+                    }
                     break;
                 case "complete":
-                    System.out.println("Enter the number of the task to complete: ");
-                    int completeTaskNumber = scanner.nextInt();
-                    scanner.nextLine();
-                    todoList.completeTask(completeTaskNumber);
+                    try {
+                        System.out.println("Enter the number of the task to complete: ");
+                        int completeTaskNumber = scanner.nextInt();
+                        scanner.nextLine();
+                        todoList.completeTask(completeTaskNumber);
+                    }
+                    catch (InputMismatchException e) {
+                        System.out.println("Invalid input. Please enter a number.");
+                        scanner.nextLine();
+                    }
                     break;
                 default:
                     System.out.println("Invalid command");
