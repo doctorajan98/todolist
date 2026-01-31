@@ -33,9 +33,8 @@ public class Main {
                         scanner.nextLine();
                         todoList.removeTask(removeTaskNumber);
                     }
-                    catch (InputMismatchException e) {
-                        System.out.println("Invalid input. Please enter a number.");
-                        scanner.nextLine();
+                    catch (TaskNotFoundException e) {
+                        throw new RuntimeException(e);
                     }
                     break;
                 case "complete":
