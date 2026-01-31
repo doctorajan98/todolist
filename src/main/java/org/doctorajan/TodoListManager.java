@@ -24,13 +24,13 @@ public class TodoListManager<T> {
         }
     }
 
-    public void removeTask(int index) {
-        if (index >= 1 && index <= tasks.size()) {
-            System.out.println("Task removed successfully");
-            tasks.remove(index - 1);
+    public void removeTask(int index) throws TaskNotFoundException {
+        if (index < 1 || index > tasks.size()) {
+            throw new TaskNotFoundException("Invalid task number.");
         }
         else {
-            System.out.println("Invalid task number.");
+            System.out.println("Task removed successfully");
+            tasks.remove(index - 1);
         }
     }
 
