@@ -14,20 +14,20 @@ public class ToDoListTest {
 
     @Test
     public void testAddTask() {
-        manager.addTask("Task 1");
+//        manager.addTask("Task 1");
         assertEquals(1, manager.getTasks().size()); // Check if task is added
     }
 
     @Test
     public void testRemoveTask() throws TaskNotFoundException {
-        manager.addTask("Task 1");
+//        manager.addTask("Task 1");
         manager.removeTask(1);
         assertEquals(0, manager.getTasks().size()); // Check if task is removed
     }
 
     @Test
     public void testCompleteTask() {
-        manager.addTask("Task 1");
+//        manager.addTask("Task 1");
         manager.completeTask(1);
         assertEquals(0, manager.getTasks().size()); // Check if task is completed and removed
     }

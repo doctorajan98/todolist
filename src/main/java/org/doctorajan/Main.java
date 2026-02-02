@@ -17,8 +17,12 @@ public class Main {
 
             switch (trimmedCommand) {
                 case "add":
-                    System.out.println("Enter a task: ");
-                    todoList.addTask(scanner.nextLine());
+                    System.out.println("Enter the task:");
+                    String taskDescription = scanner.nextLine();
+                    System.out.println("Enter the priority (1-High, 2-Medium, 3-Low):");
+                    int priority = scanner.nextInt();
+                    scanner.nextLine(); // Consume newline
+                    todoList.addTask(taskDescription, priority);
                     break;
                 case "view":
                     todoList.viewTasks();

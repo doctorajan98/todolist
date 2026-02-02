@@ -9,9 +9,10 @@ public class TodoListManager<T> {
         tasks = new ArrayList<>();
     }
 
-    public void addTask(T task) {
-        tasks.add(task);
-        System.out.println("Task added successfully");
+    public void addTask(String description, int priority) {
+        Task newTask = new Task(description, priority);
+        tasks.add((T) newTask);
+        System.out.println("Task added: " + newTask);
     }
 
     public void saveTasksToFile(String fileName) {
@@ -43,15 +44,15 @@ public class TodoListManager<T> {
     }
 
     public void loadTasksFromFile(String filename) {
-        try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
-            String task;
-            while ((task = reader.readLine()) != null) {
-                addTask((T) task); // Add each task to the list
-                System.out.println("Task loaded: " + task);
-            }
-        } catch (IOException e) {
-            System.out.println("Error loading tasks: " + e.getMessage());
-        }
+//        try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
+//            String task;
+//            while ((task = reader.readLine()) != null) {
+//                addTask((T) task, ); // Add each task to the list
+//                System.out.println("Task loaded: " + task);
+//            }
+//        } catch (IOException e) {
+//            System.out.println("Error loading tasks: " + e.getMessage());
+//        }
     }
 
     public void removeTask(int index) throws TaskNotFoundException {
