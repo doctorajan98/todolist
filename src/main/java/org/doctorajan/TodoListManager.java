@@ -38,6 +38,10 @@ public class TodoListManager<T> {
         }
     }
 
+    public ArrayList<T> getTasks() {
+        return tasks;
+    }
+
     public void loadTasksFromFile(String filename) {
         try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
             String task;
