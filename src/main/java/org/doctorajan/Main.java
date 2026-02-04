@@ -1,10 +1,15 @@
 package org.doctorajan;
 
+import javax.swing.*;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
     static void main() {
+        // GUI
+        SwingUtilities.invokeLater(() -> new ToDoListGUI());
+
+        // Command Line
         Scanner scanner = new Scanner(System.in);
         TodoListManager<String> todoList = new TodoListManager<>();
         String command;

@@ -30,15 +30,19 @@ public class TodoListManager<T> {
         }
     }
 
-    public void viewTasks() {
+    public String viewTasks() {
         if (tasks.isEmpty()) {
             System.out.println("No tasks to display");
         }
         else {
+            String viewString = "";
             for (int i = 0; i < tasks.size(); i++) {
                 System.out.println((i + 1) + ": " + tasks.get(i));
+                viewString = viewString + tasks.get(i) + "\n";
             }
+            return viewString;
         }
+        return null;
     }
 
     public ArrayList<T> getTasks() {
