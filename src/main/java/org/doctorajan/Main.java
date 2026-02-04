@@ -11,7 +11,7 @@ public class Main {
         String trimmedCommand;
 
         do {
-            System.out.println("\nEnter a command (add/view/remove/complete/exit): ");
+            System.out.println("\nEnter a command (add/view/remove/complete/save/load/exit): ");
             command = scanner.nextLine();
             trimmedCommand = command.replaceAll("\\s+", "");
 

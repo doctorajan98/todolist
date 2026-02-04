@@ -17,6 +17,14 @@ public class Task {
         return priority;
     }
 
+    public int setPriority(int priority) {
+        return this.priority = priority;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @Override
     public String toString() {
         return "[" + priority + "] " + description; // Display priority with task
